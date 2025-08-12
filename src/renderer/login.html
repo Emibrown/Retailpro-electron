@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – RetailPro</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="./theme.css" />
+</head>
+<body class="bg-neutral-900 text-neutral-200">
+<div class="flex min-h-screen flex-col">
+  <!-- Header -->
+  <header class="flex items-center justify-between border-b border-neutral-800 px-6 py-3">
+    <div class="flex items-center gap-3">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary-500)] text-white">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <h1 class="text-xl font-bold text-neutral-100">RetailPro</h1>
+    </div>
+    <button id="themeToggle" class="rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Toggle theme">
+      <span id="themeIcon" class="block h-5 w-5">🌙</span>
+    </button>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex flex-1 flex-col items-center justify-center px-4 py-8">
+    <!-- Login -->
+    <div id="loginContainer" class="w-full max-w-sm space-y-4 transition-opacity">
+      <div>
+        <label for="email" class="mb-1 block text-sm font-medium">Email or Phone</label>
+        <input id="email" type="text" class="block w-full rounded-md border-neutral-700 bg-neutral-800 px-3 py-3 text-base placeholder:text-neutral-500 focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" placeholder="you@example.com" />
+      </div>
+      <div>
+        <label for="password" class="mb-1 block text-sm font-medium">Password</label>
+        <div class="relative">
+          <input id="password" type="password" class="block w-full rounded-md border-neutral-700 bg-neutral-800 px-3 py-3 text-base placeholder:text-neutral-500 focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" />
+          <button id="togglePassword" type="button" class="absolute inset-y-0 right-0 px-3 text-sm text-neutral-400">Show</button>
+        </div>
+        <a href="#" class="mt-1 inline-block text-sm text-[var(--primary-500)] hover:underline">Forgot Password?</a>
+      </div>
+      <button id="signInBtn" class="mt-2 w-full rounded-md bg-[var(--primary-500)] px-4 py-3 text-lg font-semibold text-white hover:bg-[var(--primary-600)]">Sign In</button>
+      <button id="offlineBtn" class="w-full rounded-md border border-neutral-700 bg-neutral-800 px-4 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-700 disabled:opacity-50" title="Work offline with last synced data" disabled>Enter Offline Mode</button>
+    </div>
+
+    <!-- Account selection -->
+    <div id="accountContainer" class="hidden w-full max-w-lg space-y-4 opacity-0 transition-opacity">
+      <h2 class="text-center text-xl font-semibold text-neutral-100">Select Store / Desk</h2>
+      <div id="accountList" class="space-y-3">
+        <button class="w-full rounded-md bg-neutral-800 px-4 py-4 text-neutral-100 hover:bg-neutral-700">Main Street - Register 1</button>
+        <button class="w-full rounded-md bg-neutral-800 px-4 py-4 text-neutral-100 hover:bg-neutral-700">Mall Kiosk - Register 2</button>
+        <button class="w-full rounded-md bg-neutral-800 px-4 py-4 text-neutral-100 hover:bg-neutral-700">Outlet - Register 3</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="flex items-center justify-between border-t border-neutral-800 px-6 py-2 text-sm">
+    <span id="version">v1.0.0</span>
+    <div id="connectionStatus" class="flex items-center gap-2">
+      <span id="statusDot" class="h-2 w-2 rounded-full bg-green-500"></span>
+      <span id="statusText">Online</span>
+    </div>
+  </footer>
+</div>
+<script src="./theme.js"></script>
+<script src="./login.js"></script>
+</body>
+</html>
