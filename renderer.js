@@ -3,6 +3,7 @@ const TAX_RATE = 0.07; // 7%
 let carts = [];
 let activeCartIndex = 0;
 const STORAGE_KEY = 'retailpro_carts';
+const THEME_KEY = 'retailpro_theme';
 
 function loadState() {
   try {
@@ -28,6 +29,27 @@ function saveState() {
   } catch (err) {
     console.error('Failed to save state', err);
   }
+}
+
+function applyTheme(theme) {
+  document.body.classList.toggle('light', theme === 'light');
+  const icon = document.getElementById('themeIcon');
+  if (icon) icon.textContent = theme === 'light' ? '🌞' : '🌙';
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (err) {
+    console.error('Failed to save theme', err);
+  }
+}
+
+function loadTheme() {
+  let theme = 'dark';
+  try {
+    theme = localStorage.getItem(THEME_KEY) || 'dark';
+  } catch (err) {
+    console.error('Failed to load theme', err);
+  }
+  applyTheme(theme);
 }
 
 // Demo products
@@ -56,6 +78,7 @@ const cartItemsEl = document.getElementById('cartItems');
 const totalsEl = document.getElementById('totals');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
+const themeToggle = document.getElementById('themeToggle');
 
 // --- Helpers ---
 const money = (n) => `$${n.toFixed(2)}`;
@@ -228,8 +251,13 @@ function renderCart() {
 // --- Events ---
 searchInput.addEventListener('input', renderProducts);
 categoryFilter.addEventListener('change', renderProducts);
+if (themeToggle) themeToggle.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light');
+  applyTheme(isLight ? 'dark' : 'light');
+});
 
 // --- Init ---
+loadTheme();
 loadState();
 ensureAtLeastOneCart();
 renderTabs();
