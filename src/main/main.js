@@ -6,14 +6,14 @@ function createWindow() {
     width: 1280,
     height: 900,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, '../preload/preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
     },
   });
 
   win.setMenuBarVisibility(false);
-  win.loadFile('index.html');
+  win.loadFile(path.join(__dirname, '../renderer/login.html'));
 }
 
 app.whenReady().then(() => {

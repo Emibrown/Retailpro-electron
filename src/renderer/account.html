@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RetailPro – Select Store</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="./styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-neutral-900 text-neutral-200 flex min-h-screen flex-col">
+  <header class="flex items-center justify-between p-4">
+    <div class="flex items-center gap-2">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary-500)] text-white">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8.578 8.578a23.92 23.92 0 0 0 0 33.844L24 27 39.422 42.422a23.92 23.92 0 0 0 0-33.844L24 24 8.578 8.578Z" fill="currentColor"/></svg>
+      </div>
+      <h1 class="text-xl font-bold">RetailPro</h1>
+    </div>
+    <button id="themeToggle" class="rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Toggle theme">
+      <span id="themeIcon" class="block h-5 w-5">🌙</span>
+    </button>
+  </header>
+
+  <main class="flex flex-1 flex-col items-center justify-center px-4">
+    <h2 class="mb-6 text-2xl font-semibold">Select Store / Desk</h2>
+    <div id="storeList" class="grid w-full max-w-md gap-4"></div>
+  </main>
+
+  <footer class="flex items-center justify-between p-4 text-xs">
+    <span id="version"></span>
+    <div id="connectionStatus" class="flex items-center gap-1">
+      <span class="status-dot h-2 w-2 rounded-full"></span>
+      <span class="status-text"></span>
+    </div>
+  </footer>
+
+  <script type="module" src="./account.js"></script>
+</body>
+</html>

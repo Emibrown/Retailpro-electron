@@ -5,21 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stitch Design – RetailPro</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    :root {
-      --primary-500:#3d99f5; --primary-600:#258af3; --neutral-50:#f8fafc; --neutral-100:#f1f5f9;
-      --neutral-200:#e2e8f0; --neutral-300:#cbd5e1; --neutral-400:#94a3b8; --neutral-600:#475569;
-      --neutral-700:#334155; --neutral-800:#1e293b; --neutral-900:#0f172a;
-    }
-    body { font-family: 'Inter', sans-serif; }
-    input[type=number]::-webkit-outer-spin-button,
-    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    input[type=number] { -moz-appearance: textfield; }
-  </style>
+  <link href="./styles.css" rel="stylesheet"/>
 </head>
 <body class="bg-neutral-900 text-neutral-200">
 <div class="flex h-screen w-full flex-col">
@@ -51,23 +41,27 @@
         </div>
       </div>
 
-      <div class="w-full max-w-xs">
-        <label class="relative block">
-          <span class="sr-only">Search</span>
-          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-neutral-500">
-            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-            </svg>
-          </span>
-          <input id="searchInput" class="block w-full rounded-md border-neutral-700 bg-neutral-800 py-2 pl-10 pr-3 text-sm placeholder:text-neutral-500 focus:border-[var(--primary-500)] focus:outline-none focus:ring-1 focus:ring-[var(--primary-500)]" placeholder="Search for products..." type="text"/>
-        </label>
-      </div>
+        <div class="w-full max-w-xs">
+          <label class="relative block">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-neutral-500">
+              <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </span>
+            <input id="searchInput" class="block w-full rounded-md border-neutral-700 bg-neutral-800 py-2 pl-10 pr-3 text-sm placeholder:text-neutral-500 focus:border-[var(--primary-500)] focus:outline-none focus:ring-1 focus:ring-[var(--primary-500)]" placeholder="Search for products..." type="text"/>
+          </label>
+        </div>
 
-      <button class="relative rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Notifications">
-        <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
-        </svg>
-      </button>
+        <button id="themeToggle" class="rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Toggle theme">
+          <span id="themeIcon" class="block h-5 w-5">🌙</span>
+        </button>
+
+        <button class="relative rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Notifications">
+          <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+          </svg>
+        </button>
       <div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCA6nwVsDM07YmwHScnzsedGz01HAZf3Jw-68UTeg_G49xpPkUb-V9UPf1EvTvRKSpEzPeI5yaofzmRsraViFovCKn2LWtkIS_-llqYD3jJI_awi5uwZp5GN3bO3u18MMJqDcpzQQAmST0s_W3f37zxFdJb_em5hdRcRujprsbw95_DR_b0UZnCcNUf7qi1KfI4f0y_vqyyA1vMJ0uXD4WGIsCJEgYdXfu1pWjbMFAgAE6rZjEkhaJ3_LVBNvMh_kj-CXI-kXTDuCac");'></div>
     </div>
   </header>
@@ -149,6 +143,6 @@
   </footer>
 </div>
 
-<script src="./renderer.js"></script>
+<script type="module" src="./renderer.js"></script>
 </body>
 </html>
