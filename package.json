@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "RetailPro POS demo in Electron",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
@@ -19,7 +19,7 @@
     "appId": "com.retailpro.app",
     "productName": "RetailPro",
     "files": [
-      "**/*",
+      "src/**/*",
       "!**/*.map",
       "!node_modules/.cache/**"
     ],
