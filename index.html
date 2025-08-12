@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stitch Design – RetailPro</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style type="text/tailwindcss">
+    :root {
+      --primary-500:#3d99f5; --primary-600:#258af3; --neutral-50:#f8fafc; --neutral-100:#f1f5f9;
+      --neutral-200:#e2e8f0; --neutral-300:#cbd5e1; --neutral-400:#94a3b8; --neutral-600:#475569;
+      --neutral-700:#334155; --neutral-800:#1e293b; --neutral-900:#0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; }
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
+</head>
+<body class="bg-neutral-900 text-neutral-200">
+<div class="flex h-screen w-full flex-col">
+  <!-- Header -->
+  <header class="flex items-center justify-between border-b border-neutral-800 px-6 py-3">
+    <div class="flex items-center gap-3">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary-500)] text-white">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <h1 class="text-xl font-bold text-neutral-100">RetailPro</h1>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+      <div class="flex items-center gap-4 text-sm">
+        <div class="flex items-center gap-2 text-neutral-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <path d="M216.59,96.38a8,8,0,0,0-8.23-7.16L176,88.75V64a16,16,0,0,0-16-16H96A16,16,0,0,0,80,64v24.75l-32.36.47a8,8,0,0,0-8.23,7.16l-8,80a8,8,0,0,0,8,8.84H216.59a8,8,0,0,0,8-8.84Zm-40.66,0L168,88.92V64h8v24.92l-16,1.46Zm-88,0L80,89.25V64H96v24.92l.07-.07ZM41.41,176l7.15-71.45,23.37-.34.07,71.79H41.41ZM96,168V104h16v64H96Zm32,0V104h16v64H128Zm63,8H176V104h31.84l-7.25,72Z"></path>
+          </svg>
+          <span class="font-medium text-neutral-300">Main Street Branch</span>
+        </div>
+        <div class="h-5 w-px bg-neutral-700"></div>
+        <div class="flex items-center gap-2 text-neutral-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.1-26.54,48,48,0,1,0-67.32,0,79.66,79.66,0,0,0-36.1,26.54,88,88,0,1,1,139.52,0Z"></path>
+          </svg>
+          <span class="font-medium text-neutral-300">Jane Doe</span>
+        </div>
+      </div>
+
+      <div class="w-full max-w-xs">
+        <label class="relative block">
+          <span class="sr-only">Search</span>
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-neutral-500">
+            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+            </svg>
+          </span>
+          <input id="searchInput" class="block w-full rounded-md border-neutral-700 bg-neutral-800 py-2 pl-10 pr-3 text-sm placeholder:text-neutral-500 focus:border-[var(--primary-500)] focus:outline-none focus:ring-1 focus:ring-[var(--primary-500)]" placeholder="Search for products..." type="text"/>
+        </label>
+      </div>
+
+      <button class="relative rounded-full p-2 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300" title="Notifications">
+        <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+        </svg>
+      </button>
+      <div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCA6nwVsDM07YmwHScnzsedGz01HAZf3Jw-68UTeg_G49xpPkUb-V9UPf1EvTvRKSpEzPeI5yaofzmRsraViFovCKn2LWtkIS_-llqYD3jJI_awi5uwZp5GN3bO3u18MMJqDcpzQQAmST0s_W3f37zxFdJb_em5hdRcRujprsbw95_DR_b0UZnCcNUf7qi1KfI4f0y_vqyyA1vMJ0uXD4WGIsCJEgYdXfu1pWjbMFAgAE6rZjEkhaJ3_LVBNvMh_kj-CXI-kXTDuCac");'></div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="grid flex-1 grid-cols-12 gap-6 p-6 overflow-hidden">
+    <!-- Left: Products & Tabs -->
+    <div class="col-span-8 flex flex-col min-h-0">
+      <div class="mb-4 border-b border-neutral-800">
+        <nav id="cartTabs" aria-label="Tabs" class="-mb-px flex space-x-6"></nav>
+      </div>
+
+      <div class="mb-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <select id="categoryFilter" class="rounded-md border-neutral-700 bg-neutral-800 text-sm text-neutral-200 focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]">
+            <option value="all">All Categories</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Produce">Produce</option>
+          </select>
+          <button id="scanBtn" class="flex items-center gap-2 rounded-md border border-neutral-700 bg-neutral-800 px-3 py-2 text-sm font-medium text-neutral-300 hover:bg-neutral-700">
+            <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M232,184V152a8,8,0,0,0-8-8H200V88a8,8,0,0,0-8-8H168a8,8,0,0,0-8,8v48H128V40H88V88H56V40a8,8,0,0,0-8-8H24a8,8,0,0,0-8,8v96H32a8,8,0,0,0,8-8V48H40v80H80V48h32v80h32v80h32V144h24v32h24v32a8,8,0,0,0,8,8h24A8,8,0,0,0,232,184ZM216,184H200v-8h16Zm-72-40V88h16v56Z"></path></svg>
+            Scan Barcode
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="productGrid" class="grid grid-cols-2 gap-4 overflow-y-auto flex-1 rounded-lg bg-neutral-800 p-4 shadow-sm ring-1 ring-neutral-800 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"></div>
+    </div>
+
+    <!-- Right: Cart -->
+    <div class="col-span-4 flex flex-col min-h-0 rounded-lg bg-neutral-800 shadow-sm ring-1 ring-neutral-700">
+      <div class="border-b border-neutral-700 p-4">
+        <h2 class="text-lg font-semibold text-neutral-100">Current Cart</h2>
+      </div>
+      <div class="flex-1 overflow-y-auto p-4" id="cartItemsContainer">
+        <div id="cartItems" class="space-y-4"></div>
+      </div>
+      <div class="border-t border-neutral-700 p-4">
+        <div id="totals" class="space-y-2"></div>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <button class="w-full rounded-md bg-[var(--primary-500)] px-4 py-3 text-sm font-bold text-white hover:bg-[var(--primary-600)]">Cash</button>
+          <button class="w-full rounded-md bg-[var(--primary-500)] px-4 py-3 text-sm font-bold text-white hover:bg-[var(--primary-600)]">Card</button>
+          <button class="w-full rounded-md bg-[var(--primary-500)] px-4 py-3 text-sm font-bold text-white hover:bg-[var(--primary-600)]">Mobile</button>
+          <button class="w-full rounded-md bg-neutral-700 px-4 py-3 text-sm font-bold text-neutral-200 hover:bg-neutral-600">Split Pay</button>
+        </div>
+        <button id="holdCartBtn" class="mt-3 w-full rounded-md border border-neutral-600 bg-neutral-800 px-4 py-3 text-sm font-bold text-neutral-200 hover:bg-neutral-700">Hold Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="flex items-center justify-between border-t border-neutral-800 px-6 py-2">
+    <div class="flex items-center gap-4">
+      <button class="flex flex-col items-center gap-1 rounded-md p-2 text-xs font-medium text-neutral-400 hover:bg-neutral-800">
+        <div class="rounded-full bg-neutral-700 p-2 text-neutral-300">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M205.66,61.64l-144,144a8,8,0,0,1-11.32-11.32l144-144a8,8,0,0,1,11.32,11.31ZM50.54,101.44a36,36,0,0,1,50.92-50.91h0a36,36,0,0,1-50.92,50.91ZM56,76A20,20,0,1,0,90.14,61.84h0A20,20,0,0,0,56,76ZM216,180a36,36,0,1,1-10.54-25.46h0A35.76,35.76,0,0,1,216,180Zm-16,0a20,20,0,1,0-5.86,14.14A19.87,19.87,0,0,0,200,180Z"></path></svg>
+        </div>
+        <span>Discount</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 rounded-md p-2 text-xs font-medium text-neutral-400 hover:bg-neutral-800">
+        <div class="rounded-full bg-neutral-700 p-2 text-neutral-300">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"></path></svg>
+        </div>
+        <span>Reprint</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 rounded-md p-2 text-xs font-medium text-neutral-400 hover:bg-neutral-800">
+        <div class="rounded-full bg-neutral-700 p-2 text-neutral-300">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80,80,0,1,0,71.43,71.39a3.07,3.07,0,0,1-.26.25L44.59,96H72a8,8,0,0,1,0,16H24a8,8,0,0,1-8-8V56a8,8,0,0,1,16,0V85.8L60.25,60A96,96,0,0,1,224,128Z"></path></svg>
+        </div>
+        <span>Return</span>
+      </button>
+    </div>
+    <div class="flex items-center gap-2 rounded-full bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-300">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      <span id="offlineBanner">Working Offline - Changes will sync when online</span>
+    </div>
+  </footer>
+</div>
+
+<script src="./renderer.js"></script>
+</body>
+</html>

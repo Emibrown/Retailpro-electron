@@ -1,0 +1,43 @@
+{
+  "name": "retailpro-electron",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RetailPro POS demo in Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "lint": "echo \"(optional) add eslint\"",
+    "test": "echo \"(optional) add tests\"",
+    "build": "electron-builder -mwl"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.retailpro.app",
+    "productName": "RetailPro",
+    "files": [
+      "**/*",
+      "!**/*.map",
+      "!node_modules/.cache/**"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}
