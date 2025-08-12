@@ -2,6 +2,33 @@
 const TAX_RATE = 0.07; // 7%
 let carts = [];
 let activeCartIndex = 0;
+const STORAGE_KEY = 'retailpro_carts';
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const data = JSON.parse(raw);
+      if (Array.isArray(data.carts)) {
+        carts = data.carts;
+        activeCartIndex = data.activeCartIndex || 0;
+      }
+    }
+  } catch (err) {
+    console.error('Failed to load state', err);
+  }
+}
+
+function saveState() {
+  try {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ carts, activeCartIndex })
+    );
+  } catch (err) {
+    console.error('Failed to save state', err);
+  }
+}
 
 // Demo products
 const PRODUCTS = [
@@ -46,6 +73,7 @@ function setActiveCart(index) {
   activeCartIndex = index;
   renderTabs();
   renderCart();
+  saveState();
 }
 
 function addNewCart() {
@@ -58,6 +86,7 @@ function addToCart(productId, qty = 1) {
   cart.items[productId] = (cart.items[productId] || 0) + qty;
   renderCart();
   renderTabs();
+  saveState();
 }
 
 function updateQty(productId, qty) {
@@ -66,6 +95,7 @@ function updateQty(productId, qty) {
   else cart.items[productId] = qty;
   renderCart();
   renderTabs();
+  saveState();
 }
 
 function removeFromCart(productId) {
@@ -73,6 +103,7 @@ function removeFromCart(productId) {
   delete cart.items[productId];
   renderCart();
   renderTabs();
+  saveState();
 }
 
 function calcTotals(cart) {
@@ -199,7 +230,9 @@ searchInput.addEventListener('input', renderProducts);
 categoryFilter.addEventListener('change', renderProducts);
 
 // --- Init ---
+loadState();
 ensureAtLeastOneCart();
 renderTabs();
 renderProducts();
 renderCart();
+saveState();
